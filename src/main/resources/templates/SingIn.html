@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Аукцион</title>
+</head>
+<body>
+<div class="main">
+    <h1 class="main_title"><span>В</span>ход в систему</h1>
+    <form class="main_form" action="#" th:action="@{/input}" th:object="${user}" method="post">
+        <input class="email" type="email" placeholder="Введите email" required>
+        <input class="password" type="password" placeholder="Введите пароль" required>
+        <div class="form_sub">
+            <input class="sign_in" type="submit" value="Войти">
+        </div>
+    </form>
+    <p>У вас нет аккаунта?</p>
+    <form class="sub_form" action="#" th:action="@{/singUp}">
+        <input class="sign_up" type="submit" value="Зарегистрироваться">
+    </form>
+</div>
+
+<style>
+    html{
+        font-family: 'Cabin', sans-serif;
+        color: RGB(155, 164, 180);
+    }
+    body{
+        background-color: RGB(30, 33, 61);
+    }
+
+    span{
+       color: RGB(250, 220, 172);
+    }
+    h1{
+    color: RGB(252, 241, 222);
+    }
+    .main{
+         width: 30%;
+         position: absolute;
+         left: 37%;
+         top: 26%;
+    }
+    .main_title{
+        position: relative;
+        left:24%;
+    }
+    .main_form {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        flex-direction: column;
+    }
+
+    .email,.password{
+        height: 40px;
+        font-size: 15px;
+        outline: none;
+        border: none;
+    }
+    input[type='submit']{
+        background-color: RGB(250, 220, 172);
+        border: none;
+        color: RGB(20, 37, 50);
+        text-align: center;
+    }
+    input[type='submit']:hover {
+        transform: scale(1.05);
+        background-color: RGB(127, 139, 161);
+        color: white;
+        box-shadow: 0 0 10px rgba(122,122,122,0.5);
+    }
+    .sign_in{
+        font-size: 17px;
+        padding: 8px 30px;
+        margin: 5px;
+    }
+    .sign_up{
+        font-size: 12px;
+        padding: 5px 25px;
+        margin: 3px;
+    }
+
+</style>
+</body>
+</html>
